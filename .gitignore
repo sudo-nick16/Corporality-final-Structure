@@ -4,7 +4,6 @@
 *.scss
 *.css.map
 
-
 # dependencies
 /node_modules
 /.pnp
