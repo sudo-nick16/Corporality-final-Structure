@@ -31,7 +31,7 @@ const Blog = () => {
     const windowSize = "menubar=no,toolbar=no,status=no,width=570,height=570"; // for window
     useEffect( async() => {
         console.log(params.article_name)
-        const blogData = await axios.get(`/articles/${params.article_name}`)
+        const blogData = await axios.get(`https://corporality.herokuapp.com/api/articles/${params.article_name}`)
         if(Object.keys(blogData.data).length === 0){
             navigate("/");
             return;
