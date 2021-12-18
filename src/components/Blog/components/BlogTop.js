@@ -21,7 +21,7 @@ function BlogTop() {
         }
     }
     useEffect( async () => {
-        const res = await axios.get("/articles/page/1");
+        const res = await axios.get("https://corporality.herokuapp.com/api/articles/page/1");
         console.log(res.data)
         setRecentArticles(res.data.slice(0,6))
         setLoading(false)
