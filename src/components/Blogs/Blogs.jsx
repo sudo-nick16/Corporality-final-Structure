@@ -25,14 +25,14 @@ function Blogs() {
         setCurrentPage(1);
         if(params.search_string){
             console.log("searching")
-            const res = await axios.get(`/articles/search/${params.search_string}/1`);
+            const res = await axios.get(`https://corporality.herokuapp.com/api/articles/search/${params.search_string}/1`);
             console.log(res.data)
             setArticles(res.data);
             setShowArticles(res.data.slice(0, res.data.length-1));
             setTotalArticles(Math.ceil(res.data[res.data.length-1].count));
             setLoading(false);
         }else{
-            const res = await axios.get("/articles/page/1");
+            const res = await axios.get("https://corporality.herokuapp.com/api/articles/page/1");
             console.log(res.data)
             setArticles(res.data);
             setShowArticles(res.data.slice(0, res.data.length-1));
@@ -45,9 +45,9 @@ function Blogs() {
         setCurrentPage(pageNumber);
         let res;
         if(params.search_string){
-            res = await axios.get(`/articles/search/${params.search_string}/${pageNumber}`); //ad
+            res = await axios.get(`https://corporality.herokuapp.com/api/articles/search/${params.search_string}/${pageNumber}`); //ad
         }else{
-            res = await axios.get(`/articles/page/${pageNumber}`);
+            res = await axios.get(`https://corporality.herokuapp.com/api/articles/page/${pageNumber}`);
 
         }
         setArticles(res.data.slice(0, res.data.length-1));
